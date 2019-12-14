@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76A1513D23A173D7008416DD /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A1513C23A173D7008416DD /* Reachability.m */; };
+		76A1513F23A1748E008416DD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76A1513E23A1748E008416DD /* SystemConfiguration.framework */; };
 		76F045D723A0B4D3001C45CA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F045D623A0B4D3001C45CA /* AppDelegate.m */; };
 		76F045DA23A0B4D3001C45CA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F045D923A0B4D3001C45CA /* SceneDelegate.m */; };
 		76F045E023A0B4D3001C45CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76F045DE23A0B4D3001C45CA /* Main.storyboard */; };
@@ -23,6 +25,9 @@
 		6089F779961A2ECFFA441EC2 /* Pods-MovieCollectionView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieCollectionView.debug.xcconfig"; path = "Target Support Files/Pods-MovieCollectionView/Pods-MovieCollectionView.debug.xcconfig"; sourceTree = "<group>"; };
 		620BA2567663BC3F124D6F94 /* Pods-MovieCollectionView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieCollectionView.release.xcconfig"; path = "Target Support Files/Pods-MovieCollectionView/Pods-MovieCollectionView.release.xcconfig"; sourceTree = "<group>"; };
 		769A7E370A50CF9397638E65 /* Pods_MovieCollectionView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieCollectionView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76A1513B23A173D7008416DD /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		76A1513C23A173D7008416DD /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		76A1513E23A1748E008416DD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		76F045D223A0B4D3001C45CA /* MovieCollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieCollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76F045D523A0B4D3001C45CA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		76F045D623A0B4D3001C45CA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -45,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76A1513F23A1748E008416DD /* SystemConfiguration.framework in Frameworks */,
 				A255048C4A6DB7B089BFD11C /* Pods_MovieCollectionView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -55,6 +61,7 @@
 		173AC61E45B2864AE6261247 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				76A1513E23A1748E008416DD /* SystemConfiguration.framework */,
 				769A7E370A50CF9397638E65 /* Pods_MovieCollectionView.framework */,
 			);
 			name = Frameworks;
@@ -95,6 +102,8 @@
 				76F045EF23A0B529001C45CA /* MovieCollectionVC.m */,
 				76F045F123A0B568001C45CA /* CollectionViewCell.h */,
 				76F045F223A0B568001C45CA /* CollectionViewCell.m */,
+				76A1513B23A173D7008416DD /* Reachability.h */,
+				76A1513C23A173D7008416DD /* Reachability.m */,
 			);
 			path = MovieCollectionView;
 			sourceTree = "<group>";
@@ -227,6 +236,7 @@
 				76F045F323A0B568001C45CA /* CollectionViewCell.m in Sources */,
 				76F045E823A0B4D5001C45CA /* main.m in Sources */,
 				76F045DA23A0B4D3001C45CA /* SceneDelegate.m in Sources */,
+				76A1513D23A173D7008416DD /* Reachability.m in Sources */,
 				76F045F023A0B529001C45CA /* MovieCollectionVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,6 +10,7 @@
 #import "CollectionViewCell.h"
 #import <AFNetworking.h>
 #import <SDWebImage/SDWebImage.h>
+#import "Reachability.h"
 
 
 @interface MovieCollectionVC ()
@@ -20,8 +21,10 @@
      NSMutableArray* rating;
      NSMutableArray* releaseYear;
     NSMutableArray* response;
+    
 }
 @property (strong, nonatomic) IBOutlet UICollectionView *movieCollectionVC;
+@property (strong,nonatomic) Reachability* reach ;
 
 @end
 
@@ -32,6 +35,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    baseURL = @"https://api.androidhive.info/json/movies.json";
     image = [[NSMutableArray alloc]initWithObjects:@"1.jpg", nil];
     title = [[NSMutableArray alloc]initWithObjects:@"", nil];
     
@@ -39,13 +43,32 @@ static NSString * const reuseIdentifier = @"Cell";
     
 
     [self getApiData];
+    
+
 
 }
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self reachabilityForInternet];
+
+}
+-(void) reachabilityForInternet
+{
+    self.reach =[Reachability reachabilityForInternetConnection];
+    switch ([_reach currentReachabilityStatus]){
+            case NotReachable:
+            printf("unreachable");
+            [self showalert:@"Unreachable"];
+                break;
+            default:
+                break;
+        }
+}
+    
+
 
 -(void) getApiData
 {
-    baseURL = @"https://api.androidhive.info/json/movies.json";
-
  NSURL *URL = [NSURL URLWithString:baseURL];
  AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
  [manager GET:URL.absoluteString parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
@@ -102,5 +125,17 @@ static NSString * const reuseIdentifier = @"Cell";
 
 #pragma mark <UICollectionViewDelegate>
 
+-(void)showalert :(NSString*) message
+{
+     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Alert" message:message preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+        
+        [alert addAction:action];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+    }
 
 @end
+
+
